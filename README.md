@@ -21,18 +21,33 @@ From the data set in step 4, creates a second, independent tidy data set with th
 ##For 1st tiny data set:
 
 Read data sets and combined them.
+
 Read subjects and combined them.
+
 Read data labels and combined them.
+
 Subset only only std and mean features from list.
+
 Performed same subset on data set.
+
 Renamed features to be more readable.
+
 Read activity list.
+
 Renamed activities to be more readable.
+
 Renamed data labels with activity name.
+
 Merged data, subjects, and labels to single tiny data set.
+
 Wrote tiny data set to file.
+
 For each activity in a subject, got the full list of measurements.
+
 Calculated the mean of each of these activities.
+
 Placed the means in subsequent columns of the subject/activity row.
+
 Wrote second tiny data set to file.
+
 
