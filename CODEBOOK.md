@@ -375,7 +375,8 @@ facorize Variale activity in the data frame Data using descriptive activity name
 #test
 
 head(Data$activity)
- [1] STANDING STANDING STANDING STANDING STANDING STANDING STANDING
+
+[1] STANDING STANDING STANDING STANDING STANDING STANDING STANDING
 6 Levels: WALKING WALKING_UPSTAIRS WALKING_DOWNSTAIRS ... LAYING
 #Appropriately labels the data set with descriptive variable names
 
@@ -388,6 +389,7 @@ names(Data)<-gsub("BodyBody", "Body", names(Data))
 ##test
 
 names(Data)
+
  [1] "timeBodyAccelerometer-mean()-X"                
  [2] "timeBodyAccelerometer-mean()-Y"                
  [3] "timeBodyAccelerometer-mean()-Z"                
@@ -457,4 +459,8 @@ names(Data)
 [67] "subject"                                       
 [68] "activity"
 #Creates a second,independent tidy data set and ouput it
-##In this part,a second, independent tidy data set will be created with the average of each variable for each activity and each subject based on the data set in step 4.
+###In this part,a second, independent tidy data set will be created with the average of each variable for each activity and each subject based on the data set in step 4.
+library(plyr);
+Data2<-aggregate(. ~subject + activity, Data, mean)
+Data2<-Data2[order(Data2$subject,Data2$activity),]
+write.table(Data2, file = "tidydata.txt",row.name=FALSE)
